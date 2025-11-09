@@ -19,7 +19,7 @@ It combines:
 - **Virgin Media + MikroTik + Cisco** → routing, VLAN trunking, switching  
 - **Proxmox VE** → hypervisor for virtualization  
 - **Windows Server 2022 (KRANG)** → AD DS, DNS, DHCP  
-- **Debian (DATABANK)** → Samba/Winbind integration with AD  
+- **Ubuntu Server (DATABANK)** → Samba/Winbind integration with AD  
 - **Web Server (Debian)** → Nginx + PHP-FPM + Tomcat ( Lightweight stack for web apps )
 - **Wazuh** → SIEM / EDR, Full stack (Manager + OpenSearch + Dashboard) 
 - **OpenVAS** → Vulnerability Scanner (Isolated in VLAN 30) 
@@ -53,7 +53,7 @@ It combines:
    |
    ├── KRANG (WinServer22) – AD/DNS/DHCP
    ├── WAZUH (Debian)
-   └── DATABANK (Debian) – Samba + Winbind
+   └── DATABANK (Ubuntu) – Samba + Winbind
 ```
 ---
 
@@ -74,7 +74,7 @@ It combines:
 | VM | Function | VLAN/IP | CPU | RAM | Status |
 |----|-----------|---------|-----|------|--------|
 | KRANG | Windows Server 2022 (AD DS, DNS, DHCP) | VLAN20 / 172.16.20.2 | 2 | 6GB | ✅ Running |
-| DATABANK | Debian File Server (Samba/Winbind) | VLAN20 / 172.16.20.3 | 2 | 4GB | ✅ Joined to AD |
+| DATABANK | Ubuntu File Server (Samba/Winbind) | VLAN20 / 172.16.20.3 | 2 | 4GB | ✅ Joined to AD |
 | Wazuh | SIEM/EDR | VLAN20 / 172.16.20.4 | 4 | 8GB | ✅ Running |
 | Uptime Kuma | Monitoring | VLAN10 / 172.16.10.20 | 1 | 1GB | 🔜 Configuring |
 | Grafana+Prometheus | Observability | VLAN20 / 172.16.20.10 | 2 | 3GB | 🔜 Planned |
